@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ProfileContainer = styled.div`
   margin-top: -6rem;
-  background: ${props => props.theme['base-profile']};
+  background: ${(props) => props.theme['base-profile']};
   border-radius: 10px;
   width: 100%;
   display: flex;
@@ -20,22 +20,24 @@ export const Avatar = styled.img`
 
 export const ProfileInfos = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 1rem;
   line-height: 1.6;
 
   header {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 
     strong {
       font-size: 1.5rem;
-      color: ${props => props.theme['base-title']};
+      color: ${(props) => props.theme['base-title']};
     }
 
     a {
-      color: ${props => props.theme['blue']};
+      color: ${(props) => props.theme.blue};
       text-decoration: none;
       font-weight: bold;
       display: flex;
@@ -54,8 +56,6 @@ export const UserStats = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: ${props => props.theme['base-span']};
+    color: ${(props) => props.theme['base-span']};
   }
 `
-
-

@@ -12,8 +12,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme['base-background']};
-    color: ${props => props.theme['base-text']};
+    background: ${(props) => props.theme['base-background']};
+    color: ${(props) => props.theme['base-text']};
     -webkit-font-smoothing: antialised;
   }
 
@@ -21,4 +21,3 @@ export const GlobalStyle = createGlobalStyle`
     font: 400 1rem Nunito, sans-serif;
   }
 `
-

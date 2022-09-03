@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   width: 56rem;
@@ -6,5 +6,10 @@ export const HomeContainer = styled.div`
   padding: 0 1rem 5rem 1rem;
   display: flex;
   flex-direction: column;
-  margin: 0 auto ;
+  margin: 0 auto;
+`
+
+export const PostsSection = styled.div`
+  display: flex;
+  gap: 2rem;
 `

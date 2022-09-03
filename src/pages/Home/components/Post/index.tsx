@@ -1,14 +1,31 @@
-import { Content, PostCardContainer, Title } from "./styles";
+import { formatDistanceToNow } from 'date-fns'
+import ReactMarkdown from 'react-markdown'
+import { Content, PostCardContainer, Title } from './styles'
 
-export function Post() {
+export interface PostsHome {
+  title: string
+  created_at: string
+  body: string
+  number: number
+}
+
+export function Post(props: PostsHome) {
+  const transformInDate = new Date(props.created_at)
+
+  const publishedDateRelativeToNow = formatDistanceToNow(transformInDate, {
+    addSuffix: true,
+  })
+
   return (
-    <PostCardContainer href="/Publication">
+    <PostCardContainer>
       <Title>
-        <strong>JavaScript data types and data structures</strong>
-        <span>1 day ago</span>
+        <a href={`/Publication/${props.number}`}>
+          <strong>{props.title}</strong>
+        </a>
+        <span>{publishedDateRelativeToNow}</span>
       </Title>
       <Content>
-        Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in...
+        <ReactMarkdown>{props.body}</ReactMarkdown>
       </Content>
     </PostCardContainer>
   )
